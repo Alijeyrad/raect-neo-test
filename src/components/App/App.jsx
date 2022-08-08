@@ -7,6 +7,7 @@ import React, {
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from '../Layout/Layout';
 import Spinner from '../Spinner/Spinner';
+import WellcomeCard from '../WellcomeCard/WellcomeCard';
 import './App.css';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
@@ -26,9 +27,14 @@ function App() {
           {!loaded && (
             <Spinner />
           )}
-
           {loaded && (
             <Route exact path="/" />
+          )}
+
+          {loaded && (
+            <Route path="/start">
+              <WellcomeCard />
+            </Route>
           )}
 
         </Layout>

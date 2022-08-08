@@ -37,20 +37,34 @@ function Header() {
 
       <div
         ref={mySidebar}
-        className="w3-sidebar w3-center w3-bar-block w3-black w3-xlarge w3-animate-left"
+        className="w3-sidebar w3-center w3-bar-block w3-black w3-large w3-animate-left"
         style={{
           width: '90px', display: 'none', paddingTop: '10px', zIndex: '5',
         }}
       >
-        <a href="#" className="w3-bar-item w3-button"><i className="fa fa-home" /></a>
-        <a href="#" className="w3-bar-item w3-button"><i className="fa fa-search" /></a>
-        <a href="#" className="w3-bar-item w3-button"><i className="fa fa-envelope" /></a>
-        <a href="#" className="w3-bar-item w3-button"><i className="fa fa-globe" /></a>
-        <a href="#" className="w3-bar-item w3-button"><i className="fa fa-trash" /></a>
+        <a href="#" className="w3-bar-item w3-button w3-margin-bottom">
+          <i className="fa fa-user" />
+          {' '}
+          Profile
+        </a>
+        <a href="#" className="w3-bar-item w3-button w3-margin-bottom">
+          <i className="fa fa-home" />
+          {' '}
+          Home
+        </a>
+        <a href="#" className="w3-bar-item w3-button w3-margin-bottom">
+          <i className="fa-solid fa-rotate" />
+          {' '}
+          Restart
+        </a>
+        <a href="#" className="w3-bar-item w3-button">
+          <i className="fa-solid fa-circle-info" />
+          About
+        </a>
       </div>
 
       {/* <!-- Overlay effect when opening sidebar on small screens --> */}
-      <div className="w3-overlay w3-hide-large w3-animate-opacity" onClick={w3Close} onKeyDown={w3Close} role="button" tabIndex={0} style={{ cursor: 'pointer' }} title="close side menu" ref={myOverlay} />
+      <div className="w3-overlay w3-hide-large w3-animate-opacity" onClick={w3Close} onKeyDown={w3Close} role="button" tabIndex={0} style={{ cursor: 'pointer' }} title="Close Menu" ref={myOverlay} />
     </>
   );
 }

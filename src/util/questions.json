@@ -1,0 +1,304 @@
+{
+    "questions" : [
+        {
+            "text": "Often feel blue.",
+            "key": "plus",
+            "scale": "neuroticism",
+            "code": "n1"
+        },
+        {
+            "text": "Dislike myself.",
+            "key": "plus",
+            "scale": "neuroticism",
+            "code": "n2"
+        },
+        {
+            "text": "Am often down in the dumps.",
+            "key": "plus",
+            "scale": "neuroticism",
+            "code": "n3"
+        },
+        {
+            "text": "Have frequent mood swings.",
+            "key": "plus",
+            "scale": "neuroticism",
+            "code": "n4"
+        },
+        {
+            "text": "Panic easily.",
+            "key": "plus",
+            "scale": "neuroticism",
+            "code": "n5"
+        },
+        {
+            "text": "Rarely get irritated.",
+            "key": "minus",
+            "scale": "neuroticism",
+            "code": "n6"
+        },
+        {
+            "text": "Seldom feel blue.",
+            "key": "minus",
+            "scale": "neuroticism",
+            "code": "n7"
+        },
+        {
+            "text": "Feel comfortable with myself.",
+            "key": "minus",
+            "scale": "neuroticism",
+            "code": "n8"
+        },
+        {
+            "text": "Am not easily bothered by things.",
+            "key": "minus",
+            "scale": "neuroticism",
+            "code": "n9"
+        },
+        {
+            "text": "Am very pleased with myself.",
+            "key": "minus",
+            "scale": "neuroticism",
+            "code": "n10"
+        },
+        {
+            "text": "Feel comfortable around people.",
+            "key": "plus",
+            "scale": "extraversion",
+            "code": "e1"
+        },
+        {
+            "text": "Make friends easily.",
+            "key": "plus",
+            "scale": "extraversion",
+            "code": "e2"
+        },
+        {
+            "text": "Am skilled in handling social situations.",
+            "key": "plus",
+            "scale": "extraversion",
+            "code": "e3"
+        },
+        {
+            "text": "Am the life of the party.",
+            "key": "plus",
+            "scale": "extraversion",
+            "code": "e4"
+        },
+        {
+            "text": "Know how to captivate people.",
+            "key": "plus",
+            "scale": "extraversion",
+            "code": "e5"
+        },
+        {
+            "text": "Have little to say.",
+            "key": "minus",
+            "scale": "extraversion",
+            "code": "e6"
+        },
+        {
+            "text": "Keep in the background.",
+            "key": "minus",
+            "scale": "extraversion",
+            "code": "e7"
+        },
+        {
+            "text": "Would describe my experiences as somewhat dull.",
+            "key": "minus",
+            "scale": "extraversion",
+            "code": "e8"
+        },
+        {
+            "text": "Don't like to draw attention to myself.",
+            "key": "minus",
+            "scale": "extraversion",
+            "code": "e9"
+        },
+        {
+            "text": "Don't talk a lot.",
+            "key": "minus",
+            "scale": "extraversion",
+            "code": "e10"
+        },
+        {
+            "text": "Am not interested in abstract ideas.",
+            "key": "minus",
+            "scale": "openness to experience",
+            "code": "o10"
+        },
+        {
+            "text": "Do not like art.",
+            "key": "minus",
+            "scale": "openness to experience",
+            "code": "o9"
+        },
+        {
+            "text": "Avoid philosophical discussions.",
+            "key": "minus",
+            "scale": "openness to experience",
+            "code": "o8"
+        },
+        {
+            "text": "Do not enjoy going to art museums.",
+            "key": "minus",
+            "scale": "openness to experience",
+            "code": "o7"
+        },
+        {
+            "text": "Tend to vote for conservative political candidates.",
+            "key": "minus",
+            "scale": "openness to experience",
+            "code": "o6"
+        },
+        {
+            "text": "Believe in the importance of art.",
+            "key": "plus",
+            "scale": "openness to experience",
+            "code": "o5"
+        },
+        {
+            "text": "Have a vivid imagination.",
+            "key": "plus",
+            "scale": "openness to experience",
+            "code": "o4"
+        },
+        {
+            "text": "Tend to vote for liberal political candidates.",
+            "key": "plus",
+            "scale": "openness to experience",
+            "code": "o3"
+        },
+        {
+            "text": "Carry the conversation to a higher level.",
+            "key": "plus",
+            "scale": "openness to experience",
+            "code": "o2"
+        },
+        {
+            "text": "Enjoy hearing new ideas.",
+            "key": "plus",
+            "scale": "openness to experience",
+            "code": "o1"
+        },
+        {
+            "text": "Have a good word for everyone.",
+            "key": "plus",
+            "scale": "agreeableness",
+            "code": "a1"
+        },
+        {
+            "text": "Believe that others have good intentions.",
+            "key": "plus",
+            "scale": "agreeableness",
+            "code": "a2"
+        },
+        {
+            "text": "Respect others.",
+            "key": "plus",
+            "scale": "agreeableness",
+            "code": "a3"
+        },
+        {
+            "text": "Accept people as they are.",
+            "key": "plus",
+            "scale": "agreeableness",
+            "code": "a4"
+        },
+        {
+            "text": "Make people feel at ease.",
+            "key": "plus",
+            "scale": "agreeableness",
+            "code": "a5"
+        },
+        {
+            "text": "Have a sharp tongue.",
+            "key": "minus",
+            "scale": "agreeableness",
+            "code": "a6"
+        },
+        {
+            "text": "Cut others to pieces.",
+            "key": "minus",
+            "scale": "agreeableness",
+            "code": "a7"
+        },
+        {
+            "text": "Suspect hidden motives in others.",
+            "key": "minus",
+            "scale": "agreeableness",
+            "code": "a8"
+        },
+        {
+            "text": "Get back at others.",
+            "key": "minus",
+            "scale": "agreeableness",
+            "code": "a9"
+        },
+        {
+            "text": "Insult people.",
+            "key": "minus",
+            "scale": "agreeableness",
+            "code": "a10"
+        },
+        {
+            "text": "Am always prepared.",
+            "key": "plus",
+            "scale": "conscientiousness",
+            "code": "c1"
+        },
+        {
+            "text": "Pay attention to details.",
+            "key": "plus",
+            "scale": "conscientiousness",
+            "code": "c2"
+        },
+        {
+            "text": "Get chores done right away.",
+            "key": "plus",
+            "scale": "conscientiousness",
+            "code": "c3"
+        },
+        {
+            "text": "Carry out my plans.",
+            "key": "plus",
+            "scale": "conscientiousness",
+            "code": "c4"
+        },
+        {
+            "text": "Make plans and stick to them.",
+            "key": "plus",
+            "scale": "conscientiousness",
+            "code": "c5"
+        },
+        {
+            "text": "Don't see things through.",
+            "key": "minus",
+            "scale": "conscientiousness",
+            "code": "c6"
+        },
+        {
+            "text": "Waste my time.",
+            "key": "minus",
+            "scale": "conscientiousness",
+            "code": "c7"
+        },
+        {
+            "text": "Find it difficult to get down to work.",
+            "key": "minus",
+            "scale": "conscientiousness",
+            "code": "c8"
+        },
+        {
+            "text": "Do just enough work to get by.",
+            "key": "minus",
+            "scale": "conscientiousness",
+            "code": "c9"
+        },
+        {
+            "text": "Shirk my duties.",
+            "key": "minus",
+            "scale": "conscientiousness",
+            "code": "c10"
+        }
+    ]
+}
