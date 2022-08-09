@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useRef } from 'react';
+import {
+  FaUser, FaHome, FaInfoCircle, FaRedoAlt, FaBars,
+} from 'react-icons/fa';
 
 function Header() {
   // Get the Sidebar
@@ -28,7 +31,7 @@ function Header() {
     <>
       <div className="w3-bar w3-top w3-black w3-large" style={{ zIndex: '4' }}>
         <button className="w3-bar-item w3-button w3-hover-none w3-hover-text-light-grey" onClick={w3Open} type="button">
-          <i className="fa fa-bars" />
+          <FaBars style={{ transform: 'translate(0px, 2.5px)' }} />
           {' '}
           Menu
         </button>
@@ -43,22 +46,22 @@ function Header() {
         }}
       >
         <a href="#" className="w3-bar-item w3-button w3-margin-bottom">
-          <i className="fa fa-user" />
+          <FaUser />
           {' '}
           Profile
         </a>
         <a href="#" className="w3-bar-item w3-button w3-margin-bottom">
-          <i className="fa fa-home" />
+          <FaHome />
           {' '}
           Home
         </a>
         <a href="#" className="w3-bar-item w3-button w3-margin-bottom">
-          <i className="fa-solid fa-rotate" />
+          <FaRedoAlt />
           {' '}
           Restart
         </a>
         <a href="#" className="w3-bar-item w3-button">
-          <i className="fa-solid fa-circle-info" />
+          <FaInfoCircle />
           About
         </a>
       </div>

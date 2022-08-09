@@ -2,12 +2,14 @@ import React, {
   useEffect,
   useState,
   // useReducer,
-  // useMemo,
+  useMemo,
 } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from '../Layout/Layout';
 import Spinner from '../Spinner/Spinner';
 import WellcomeCard from '../WellcomeCard/WellcomeCard';
+import Questions from '../Questions/Questions';
+import AnimationContext from '../../contexts/AnimationContext';
 import './App.css';
 
 function App() {
@@ -19,27 +21,36 @@ function App() {
     }, 1000);
   }, []);
 
+  // memo to send values through context
+  const value = useMemo(() => ({
+    setLoaded,
+  }), [loaded]);
+
   return (
-    <BrowserRouter>
-      <Switch>
-        <Layout>
+    <AnimationContext.Provider value={value}>
+      <BrowserRouter>
+        <Switch>
+          <Layout>
 
-          {!loaded && (
-            <Spinner />
-          )}
-          {loaded && (
-            <Route exact path="/">
-              <WellcomeCard />
-            </Route>
-          )}
+            {!loaded && (
+              <Spinner />
+            )}
+            {loaded && (
+              <>
+                <Route exact path="/">
+                  <WellcomeCard />
+                </Route>
 
-          {loaded && (
-            <Route path="/start" />
-          )}
+                <Route path="/questions">
+                  <Questions />
+                </Route>
+              </>
+            )}
 
-        </Layout>
-      </Switch>
-    </BrowserRouter>
+          </Layout>
+        </Switch>
+      </BrowserRouter>
+    </AnimationContext.Provider>
   );
 }
 
