@@ -28,13 +28,13 @@ function App() {
             <Spinner />
           )}
           {loaded && (
-            <Route exact path="/" />
+            <Route exact path="/">
+              <WellcomeCard />
+            </Route>
           )}
 
           {loaded && (
-            <Route path="/start">
-              <WellcomeCard />
-            </Route>
+            <Route path="/start" />
           )}
 
         </Layout>
