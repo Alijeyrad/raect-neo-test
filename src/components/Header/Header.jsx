@@ -60,7 +60,7 @@ function Header() {
           {' '}
           Restart
         </a>
-        <a href="#" className="w3-bar-item w3-button">
+        <a href="/" className="w3-bar-item w3-button">
           <FaInfoCircle />
           About
         </a>

@@ -9,7 +9,8 @@ import Layout from '../Layout/Layout';
 import Spinner from '../Spinner/Spinner';
 import WellcomeCard from '../WellcomeCard/WellcomeCard';
 import Questions from '../Questions/Questions';
-import AnimationContext from '../../contexts/AnimationContext';
+import AppContext from '../../contexts/AppContext';
+import q from '../../util/questions.json';
 import './App.css';
 
 function App() {
@@ -23,11 +24,11 @@ function App() {
 
   // memo to send values through context
   const value = useMemo(() => ({
-    setLoaded,
-  }), [loaded]);
+    questions: q.questions,
+  }), [q]);
 
   return (
-    <AnimationContext.Provider value={value}>
+    <AppContext.Provider value={value}>
       <BrowserRouter>
         <Switch>
           <Layout>
@@ -37,7 +38,7 @@ function App() {
             )}
             {loaded && (
               <>
-                <Route exact path="/">
+                <Route exact path="/test_neo/">
                   <WellcomeCard />
                 </Route>
 
@@ -50,7 +51,7 @@ function App() {
           </Layout>
         </Switch>
       </BrowserRouter>
-    </AnimationContext.Provider>
+    </AppContext.Provider>
   );
 }
 

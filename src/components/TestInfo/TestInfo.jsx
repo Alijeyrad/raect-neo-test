@@ -3,7 +3,7 @@ import React from 'react';
 function TestInfo() {
   return (
     <>
-      <p><b>Few Things To Keep In Mind:</b></p>
+      <p>Few Things To Keep In Mind:</p>
       <ul>
         <li>
           What follows are phrases describing people&apos;s behaviors.
