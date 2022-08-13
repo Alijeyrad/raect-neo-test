@@ -10,7 +10,7 @@ function Questions() {
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
-    }, 1000);
+    }, 1);
   }, []);
 
   function handleNext() {

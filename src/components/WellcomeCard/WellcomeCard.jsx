@@ -3,7 +3,6 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { MdArrowRightAlt } from 'react-icons/md';
 import TestInfo from '../TestInfo/TestInfo';
-import './WellcomeCard.css';
 
 function WellcomeCard() {
   const check = useRef(null);

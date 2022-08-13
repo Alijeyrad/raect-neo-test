@@ -14,12 +14,12 @@ import q from '../../util/questions.json';
 import './App.css';
 
 function App() {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 1000);
+    }, 1);
   }, []);
 
   // memo to send values through context
@@ -38,7 +38,7 @@ function App() {
             )}
             {loaded && (
               <>
-                <Route exact path="/test_neo/">
+                <Route exact path="/">
                   <WellcomeCard />
                 </Route>
 

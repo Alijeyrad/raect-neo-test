@@ -25,3 +25,7 @@ label:hover {
 input[type="radio"]:hover ~ label {
   opacity: 1;
 }
+
+input, label {
+  transition-duration: 400ms;
+}
