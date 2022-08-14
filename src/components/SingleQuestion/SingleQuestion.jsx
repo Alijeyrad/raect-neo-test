@@ -3,7 +3,6 @@ import React, { useReducer, useEffect, useState } from 'react';
 import Input from '../Input/Input';
 import questionReducer from '../../reducers/questions.reducer';
 import answers from '../../util/answers';
-import './SingleQuestion.css';
 
 function SingleQuestion({ ques }) {
   const [state, dispatch] = useReducer(questionReducer, answers);

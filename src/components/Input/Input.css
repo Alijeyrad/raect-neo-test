@@ -1,0 +1,31 @@
+.input[type="radio"], .input[type="radio"]:hover  {
+  opacity: 0.8;
+}
+
+.input[type="radio"]:checked {
+  opacity: 1;
+}
+
+.label {
+  opacity: 0.6;
+}
+
+.input[type="radio"] {
+  opacity: 0.6;
+}
+
+.input[type="radio"]:checked ~ .label {
+  opacity: 1;
+}
+
+.label:hover {
+  opacity: 1;
+}
+
+.input[type="radio"]:hover ~ .label {
+  opacity: 1;
+}
+
+.input, .label {
+  transition-duration: 400ms;
+}

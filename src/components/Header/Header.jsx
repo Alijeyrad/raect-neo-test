@@ -1,11 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
 import SideMenu from '../SideMenu/SideMenu';
 
 function Header() {
   // Get the Sidebar
   const mySidebar = useRef(null);
   const myOverlay = useRef(null);
+  const location = useLocation();
 
   // Toggle between showing and hiding the sidebar
   function w3Open() {
@@ -22,6 +24,8 @@ function Header() {
     mySidebar.current.style.display = 'none';
     myOverlay.current.style.display = 'none';
   }
+
+  useEffect(() => { w3Close(); }, [location.pathname]);
 
   return (
     <>

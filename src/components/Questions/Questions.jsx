@@ -7,6 +7,7 @@ import Spinner from '../Spinner/Spinner';
 import AppContext from '../../contexts/AppContext';
 import SingleQuestion from '../SingleQuestion/SingleQuestion';
 import Select from '../Select/Select';
+import Stopwatch from '../Stopwatch/Stopwatch';
 import './Questions.css';
 
 function Questions() {
@@ -53,6 +54,7 @@ function Questions() {
         <>
           <div className="w3-animate-left">
             <div className="w3-row-padding w3-padding">
+              <Stopwatch />
               <div className="w3-content w3-light-gray w3-padding-16" style={{ maxWidth: '700px', marginBottom: '50px' }}>
                 <div className="w3-container" style={{ minHeight: '460px', zIndex: '1' }}>
                   {qArray.map((item) => (

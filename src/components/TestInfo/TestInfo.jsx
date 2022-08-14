@@ -18,7 +18,7 @@ function TestInfo() {
         <li className="w3-padding-16">
           Describe yourself as you generally are now, not as you wish to be in the future.
           Describe yourself as you honestly see yourself,
-          in relation to other people you know
+          in relation to other people you know.
         </li>
         <li>
           Your responses will be kept in
