@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { MdArrowRightAlt } from 'react-icons/md';

@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-no-bind */
-/* eslint-disable max-len */
 import React, {
   useState, useEffect, useContext,
 } from 'react';
 import Spinner from '../Spinner/Spinner';
 import AppContext from '../../contexts/AppContext';
 import SingleQuestion from '../SingleQuestion/SingleQuestion';
-import Select from '../Select/Select';
 import Stopwatch from '../Stopwatch/Stopwatch';
+import Pagination from '../Pagination/Pagination';
 import './Questions.css';
 
 function Questions() {
@@ -20,22 +19,24 @@ function Questions() {
     }, 1);
   }, []);
 
-  function handleNext() {
-    setPage(page === 10 ? 1 : page + 1);
+  function scrollToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
+
+  function handleNext() {
+    setPage(page === 10 ? 1 : page + 1);
+    scrollToTop();
+  }
   function handlePrev() {
     setPage(page === 1 ? 10 : page - 1);
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    scrollToTop();
   }
 
   function handlePage(event) {
     const num = event.target.value;
     setPage(parseInt(num, 10));
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    scrollToTop();
   }
 
   const { questions } = useContext(AppContext);
@@ -65,25 +66,12 @@ function Questions() {
             </div>
           </div>
 
-          <div className="w3-animate-left w3-center">
-            <div
-              className="w3-row-padding"
-              style={{
-                zIndex: '1', position: 'fixed', bottom: '0', width: '100%', padding: '0 16px',
-              }}
-            >
-              <div className="w3-content w3-blue-gray w3-padding-16" style={{ maxWidth: '700px', opacity: '0.97' }}>
-                <div className="w3-container" style={{ zIndex: '1' }}>
-                  <div className="pagination">
-                    <button type="button" onClick={handlePrev} className="w3-button w3-large w3-round">&laquo;</button>
-                    <Select page={page} handlePage={handlePage} />
-                    <button type="button" onClick={handleNext} className="w3-button w3-large w3-round">&raquo;</button>
-                    <button type="button" onClick={handleNext} className="submitButton w3-button w3-large w3-round w3-light-gray w3-wide">SUBMIT</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Pagination
+            handlePage={handlePage}
+            handleNext={handleNext}
+            handlePrev={handlePrev}
+            page={page}
+          />
 
         </>
       )}

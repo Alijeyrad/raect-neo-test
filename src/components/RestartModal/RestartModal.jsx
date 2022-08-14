@@ -1,14 +1,15 @@
-import React, { useReducer } from 'react';
+import React, { useRef, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import AppContext from '../../contexts/AppContext';
 import answers from '../../util/answers';
-import questionReducer from '../../reducers/questions.reducer';
 
 function RestartModal() {
-  const [, dispatch] = useReducer(questionReducer, answers);
   const history = useHistory();
+  const modal = useRef(null);
+  const { dispatch } = useContext(AppContext);
 
   function closeModal() {
-    document.getElementById('modal').style.display = 'none';
+    modal.current.style.display = 'none';
   }
 
   function restart() {
@@ -21,7 +22,7 @@ function RestartModal() {
   }
 
   return (
-    <div id="modal" className="w3-modal">
+    <div ref={modal} id="modal" className="w3-modal">
       <div className="w3-modal-content w3-card-4 w3-animate-zoom">
         <header className="w3-container w3-blue-gray">
           <button

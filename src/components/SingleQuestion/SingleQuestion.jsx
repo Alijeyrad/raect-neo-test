@@ -1,12 +1,14 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { useReducer, useEffect, useState } from 'react';
+import React, {
+  useEffect, useState, useContext,
+} from 'react';
 import Input from '../Input/Input';
-import questionReducer from '../../reducers/questions.reducer';
-import answers from '../../util/answers';
+import AppContext from '../../contexts/AppContext';
 
 function SingleQuestion({ ques }) {
-  const [state, dispatch] = useReducer(questionReducer, answers);
   const [checked, setChecked] = useState(0);
+  const [render, setRender] = useState(0);
+  const { dispatch } = useContext(AppContext);
 
   useEffect(() => {
     if (window.localStorage.getItem(ques.code)) {
@@ -16,6 +18,7 @@ function SingleQuestion({ ques }) {
         value: window.localStorage.getItem(ques.code),
       });
     }
+    setRender(render + 1);
   }, []);
 
   function handleChange(event) {
@@ -25,6 +28,7 @@ function SingleQuestion({ ques }) {
       name: event.target.name,
       value: event.target.value,
     });
+    setRender(render + 1);
   }
 
   useEffect(() => {
@@ -47,7 +51,7 @@ function SingleQuestion({ ques }) {
       default:
         break;
     }
-  }, [state]);
+  }, [render]);
 
   return (
     <div className="w3-container w3-padding-16 w3-border w3-margin w3-animate-opacity">
@@ -58,7 +62,6 @@ function SingleQuestion({ ques }) {
           -
           {' '}
           {ques.text}
-
         </b>
       </h6>
       <div className="w3-margin-left">

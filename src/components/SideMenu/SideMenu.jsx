@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { forwardRef } from 'react';
 import {
   FaUser, FaHome, FaCheckCircle,

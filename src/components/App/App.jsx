@@ -1,6 +1,7 @@
 import React, {
   useEffect,
   useState,
+  useReducer,
   useMemo,
 } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -9,11 +10,15 @@ import Spinner from '../Spinner/Spinner';
 import WellcomeCard from '../WellcomeCard/WellcomeCard';
 import Questions from '../Questions/Questions';
 import AppContext from '../../contexts/AppContext';
+import SubmitPage from '../SubmitPage/SubmitPage';
+import questionReducer from '../../reducers/questions.reducer';
 import q from '../../util/questions.json';
+import answers from '../../util/answers';
 import './App.css';
 
 function App() {
   const [loaded, setLoaded] = useState(true);
+  const [state, dispatch] = useReducer(questionReducer, answers);
 
   useEffect(() => {
     setTimeout(() => {
@@ -24,6 +29,8 @@ function App() {
   // memo to send values through context
   const value = useMemo(() => ({
     questions: q.questions,
+    state,
+    dispatch,
   }), [q]);
 
   return (
@@ -43,6 +50,10 @@ function App() {
 
                 <Route path="/questions">
                   <Questions />
+                </Route>
+
+                <Route path="/submit">
+                  <SubmitPage />
                 </Route>
               </>
             )}

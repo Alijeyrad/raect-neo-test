@@ -22,7 +22,7 @@ function Stopwatch() {
     startValues: [0, initialSeconds, initialMinutes, initialHours, 0],
   });
 
-  return <div>{timer.getTimeValues().toString()}</div>;
+  return <div style={{ display: 'none' }}>{timer.getTimeValues().toString()}</div>;
 }
 
 export default Stopwatch;
