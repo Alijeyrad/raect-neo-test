@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable max-len */
 import React, {
   useState, useEffect, useContext,
@@ -5,6 +6,7 @@ import React, {
 import Spinner from '../Spinner/Spinner';
 import AppContext from '../../contexts/AppContext';
 import SingleQuestion from '../SingleQuestion/SingleQuestion';
+import Select from '../Select/Select';
 import './Questions.css';
 
 function Questions() {
@@ -28,12 +30,12 @@ function Questions() {
     document.documentElement.scrollTop = 0;
   }
 
-  // function handlePage(event) {
-  //   const num = event.target.innerText;
-  //   setPage(parseInt(num, 10));
-  //   document.body.scrollTop = 0;
-  //   document.documentElement.scrollTop = 0;
-  // }
+  function handlePage(event) {
+    const num = event.target.value;
+    setPage(parseInt(num, 10));
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
 
   const { questions } = useContext(AppContext);
 
@@ -72,20 +74,7 @@ function Questions() {
                 <div className="w3-container" style={{ zIndex: '1' }}>
                   <div className="pagination">
                     <button type="button" onClick={handlePrev} className="w3-button w3-large w3-round">&laquo;</button>
-                    <select className="w3-select w3-round" name="page" id="page" style={{ width: '30%' }}>
-                      <option value={`${page * 5}` - `${(page - 1) * 5}`} selected>
-                        {((page - 1) * 5) + 1}
-                        {' '}
-                        -
-                        {(page * 5)}
-                      </option>
-                      <option value={`${page * 5}` - `${(page - 1) * 5}`}>
-                        {((page - 1) * 5) + 1}
-                        {' '}
-                        -
-                        {(page * 5)}
-                      </option>
-                    </select>
+                    <Select page={page} handlePage={handlePage} />
                     <button type="button" onClick={handleNext} className="w3-button w3-large w3-round">&raquo;</button>
                     <button type="button" onClick={handleNext} className="submitButton w3-button w3-large w3-round w3-light-gray w3-wide">SUBMIT</button>
                   </div>
