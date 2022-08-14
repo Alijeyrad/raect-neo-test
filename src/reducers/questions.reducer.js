@@ -5,6 +5,10 @@ const questionReducer = (state, action) => {
       // eslint-disable-next-line no-param-reassign
       state[action.name] = action.value;
       return { ...state };
+    case 'RESTART':
+      window.localStorage.clear();
+      // eslint-disable-next-line no-param-reassign
+      return { ...action.questions };
     default:
       return { ...state };
   }

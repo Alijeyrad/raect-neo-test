@@ -1,7 +1,6 @@
 import React, {
   useEffect,
   useState,
-  // useReducer,
   useMemo,
 } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -38,7 +37,7 @@ function App() {
             )}
             {loaded && (
               <>
-                <Route exact path="/">
+                <Route exact path="/test">
                   <WellcomeCard />
                 </Route>
 

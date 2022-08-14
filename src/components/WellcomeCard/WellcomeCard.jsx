@@ -37,7 +37,8 @@ function WellcomeCard() {
               and you&apos;ll have
               {' '}
               <b>as much time as you need</b>
-              .
+              {' '}
+              to answer them.
             </h6>
             <TestInfo />
             <div className="w3-margin-bottom">
