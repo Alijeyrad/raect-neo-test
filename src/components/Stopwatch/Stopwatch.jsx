@@ -1,4 +1,3 @@
-import React from 'react';
 import useTimer from 'easytimer-react-hook';
 
 function Stopwatch() {
@@ -21,8 +20,6 @@ function Stopwatch() {
     callback: saveTime,
     startValues: [0, initialSeconds, initialMinutes, initialHours, 0],
   });
-
-  return <div style={{ display: 'none' }}>{timer.getTimeValues().toString()}</div>;
 }
 
 export default Stopwatch;

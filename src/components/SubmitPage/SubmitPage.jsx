@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Spinner from '../Spinner/Spinner';
+import UnansweredQuestions from '../UnansweredQuestions/UnansweredQuestions';
+import NoUnansweredQuestions from '../NoUnansweredQuestions/NoUnansweredQuestions';
 import AppContext from '../../contexts/AppContext';
 
 function SubmitPage() {
   const [load, setLoad] = useState(true);
   const { state, answersList } = useContext(AppContext);
-  const newState = new Map(state);
+  const newStateWithEmptyAnswers = new Map(state);
 
   useEffect(() => {
     setTimeout(() => {
@@ -14,11 +16,7 @@ function SubmitPage() {
   }, []);
 
   const emptyAnswers = answersList.filter((answer) => !state.has(answer));
-  emptyAnswers.forEach((answer) => newState.set(answer, null));
-
-  function click() {
-    console.log('state', state);
-  }
+  emptyAnswers.forEach((answer) => newStateWithEmptyAnswers.set(answer, null));
 
   return (
     <>
@@ -31,16 +29,15 @@ function SubmitPage() {
         <div className="w3-animate-left w3-margin-bottom">
           <div className="w3-row-padding w3-padding">
             <div className="w3-content w3-light-gray w3-padding w3-card" style={{ maxWidth: '700px' }}>
-              <div className="w3-container w3-padding w3-margin-bottom" style={{ minHeight: '460px' }}>
-                <h3 className="w3-center">You&apos;re Almost Done!</h3>
-                <button type="button" onClick={click}>log</button>
-                <h6>
-                  There Are
-                  {' '}
-                  {emptyAnswers.length}
-                  {' '}
-                  Unanswered Questions.
-                </h6>
+              <div className="w3-center w3-container w3-padding w3-margin-bottom" style={{ minHeight: '440px' }}>
+                <h3>You&apos;re Almost Done!</h3>
+                <hr className="w3-border-black" />
+                {emptyAnswers.length !== 0 && (
+                  <UnansweredQuestions num={emptyAnswers.length} />
+                )}
+                {emptyAnswers.length === 0 && (
+                  <NoUnansweredQuestions />
+                )}
               </div>
             </div>
           </div>

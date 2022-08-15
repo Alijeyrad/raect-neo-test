@@ -9,7 +9,7 @@ function RestartButton() {
 
   return (
     <>
-      <button href="#" className="w3-bar-item w3-button w3-margin-bottom" type="button" onClick={openModal}>
+      <button className="w3-bar-item w3-button w3-margin-bottom" type="button" onClick={openModal}>
         <FaRedoAlt />
         {' '}
         Restart

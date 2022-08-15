@@ -12,26 +12,12 @@ import './Questions.css';
 function Questions() {
   const [load, setLoad] = useState(true);
   const [page, setPage] = useState(1);
-  const { questions, dispatch } = useContext(AppContext);
+  const { questions } = useContext(AppContext);
 
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
     }, 1000);
-  }, []);
-
-  function dispatchAnsweredQuestions(ques) {
-    if (window.localStorage.getItem(ques.code)) {
-      dispatch({
-        type: 'ANSWER',
-        name: ques.code,
-        value: window.localStorage.getItem(ques.code),
-      });
-    }
-  }
-
-  useEffect(() => {
-    questions.map((item) => dispatchAnsweredQuestions(item));
   }, []);
 
   function scrollToTop() {

@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import { Link } from 'react-router-dom';
 import {
   FaUser, FaHome, FaCheckCircle,
 } from 'react-icons/fa';
@@ -12,10 +13,10 @@ const SideMenu = forwardRef((props, ref) => (
       width: '90px', display: 'none', paddingTop: '10px', zIndex: '5',
     }}
   >
-    <a href="/test" className="w3-bar-item w3-button">
+    <Link to="/test" className="w3-bar-item w3-button">
       <FaCheckCircle />
       Start
-    </a>
+    </Link>
     <a href="/panel" className="w3-bar-item w3-button w3-margin-bottom">
       <FaUser />
       {' '}
