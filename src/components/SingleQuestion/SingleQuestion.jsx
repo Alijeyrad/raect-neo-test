@@ -10,17 +10,6 @@ function SingleQuestion({ ques }) {
   const [render, setRender] = useState(0);
   const { dispatch } = useContext(AppContext);
 
-  useEffect(() => {
-    if (window.localStorage.getItem(ques.code)) {
-      dispatch({
-        type: 'ANSWER',
-        name: ques.code,
-        value: window.localStorage.getItem(ques.code),
-      });
-    }
-    setRender(render + 1);
-  }, []);
-
   function handleChange(event) {
     // send answer to the reducer
     dispatch({

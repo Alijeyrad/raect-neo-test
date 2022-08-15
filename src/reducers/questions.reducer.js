@@ -1,17 +1,18 @@
 const questionReducer = (state, action) => {
-  const newState = { ...state };
+  const newState = state;
+  const clearState = new Map();
   switch (action.type) {
     case 'ANSWER':
+      newState.set(action.name, action.value);
       window.localStorage.setItem(`${action.name}`, `${action.value}`);
-      newState[action.name] = action.value;
-      return { ...newState };
+      return newState;
 
     case 'RESTART':
       window.localStorage.clear();
-      return { ...action.questions };
+      return clearState;
 
     default:
-      return { ...state };
+      return state;
   }
 };
 

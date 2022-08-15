@@ -1,7 +1,6 @@
 import React, { useRef, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import AppContext from '../../contexts/AppContext';
-import answers from '../../util/answers';
 
 function RestartModal() {
   const history = useHistory();
@@ -15,7 +14,6 @@ function RestartModal() {
   function restart() {
     dispatch({
       type: 'RESTART',
-      questions: answers,
     });
     closeModal();
     history.push('/test');

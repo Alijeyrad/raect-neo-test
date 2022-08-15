@@ -13,7 +13,7 @@ import AppContext from '../../contexts/AppContext';
 import SubmitPage from '../SubmitPage/SubmitPage';
 import questionReducer from '../../reducers/questions.reducer';
 import q from '../../util/questions.json';
-import answers from '../../util/answers';
+import { answers, answersList } from '../../util/answers';
 import './App.css';
 
 function App() {
@@ -31,7 +31,8 @@ function App() {
     questions: q.questions,
     state,
     dispatch,
-  }), [q]);
+    answersList,
+  }), [q, state, dispatch, answersList]);
 
   return (
     <AppContext.Provider value={value}>

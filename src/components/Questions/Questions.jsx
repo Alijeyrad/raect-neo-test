@@ -10,13 +10,28 @@ import Pagination from '../Pagination/Pagination';
 import './Questions.css';
 
 function Questions() {
-  const [load, setLoad] = useState(false);
+  const [load, setLoad] = useState(true);
   const [page, setPage] = useState(1);
+  const { questions, dispatch } = useContext(AppContext);
 
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
-    }, 1);
+    }, 1000);
+  }, []);
+
+  function dispatchAnsweredQuestions(ques) {
+    if (window.localStorage.getItem(ques.code)) {
+      dispatch({
+        type: 'ANSWER',
+        name: ques.code,
+        value: window.localStorage.getItem(ques.code),
+      });
+    }
+  }
+
+  useEffect(() => {
+    questions.map((item) => dispatchAnsweredQuestions(item));
   }, []);
 
   function scrollToTop() {
@@ -38,8 +53,6 @@ function Questions() {
     setPage(parseInt(num, 10));
     scrollToTop();
   }
-
-  const { questions } = useContext(AppContext);
 
   const qArray = questions.filter(
     (item, index) => index < (page * 5) && index >= ((page - 1) * 5),
