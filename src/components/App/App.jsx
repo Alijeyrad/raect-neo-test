@@ -20,17 +20,18 @@ import { answers, answersList } from '../../util/answers';
 import './App.css';
 
 function App() {
-  const [loaded, setLoaded] = useState(true);
+  const [loaded, setLoaded] = useState(false);
   const [state, dispatch] = useReducer(questionReducer, answers);
   const [testFinished, setTestFinished] = useState(false);
 
+  // Stop the loading animation
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 1);
+    }, 1000);
   }, []);
 
-  // get questions from local storage if there are any
+  // dispatch answers in local storage to the reducer
   function dispatchAnsweredQuestions(ques) {
     if (window.localStorage.getItem(ques.code)) {
       dispatch({
@@ -41,11 +42,12 @@ function App() {
     }
   }
 
+  // get questions from local storage if there are any
   useEffect(() => {
     q.questions.map((item) => dispatchAnsweredQuestions(item));
   }, []);
 
-  // memo to send values through context
+  // memo to send values through context (performance optimization)
   const value = useMemo(() => ({
     questions: q.questions,
     state,

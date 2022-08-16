@@ -25,6 +25,7 @@ function Header() {
     myOverlay.current.style.display = 'none';
   }
 
+  // close sidemenu when redirected to welcome page
   useEffect(() => { w3Close(); }, [location.pathname]);
 
   return (

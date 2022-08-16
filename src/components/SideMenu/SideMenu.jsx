@@ -5,6 +5,7 @@ import {
 } from 'react-icons/fa';
 import RestartButton from '../RestartButton/RestartButton';
 
+// parent component >> 'Header'
 const SideMenu = forwardRef((props, ref) => (
   <div
     ref={ref}

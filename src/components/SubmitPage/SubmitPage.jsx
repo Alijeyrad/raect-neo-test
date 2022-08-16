@@ -5,17 +5,24 @@ import NoUnansweredQuestions from '../NoUnansweredQuestions/NoUnansweredQuestion
 import AppContext from '../../contexts/AppContext';
 
 function SubmitPage() {
-  const [load, setLoad] = useState(true);
+  const [load, setLoad] = useState(false);
   const { state, answersList } = useContext(AppContext);
+
+  // create a copy of state
   const newStateWithEmptyAnswers = new Map(state);
 
+  // stop loading animation
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
     }, 1000);
   }, []);
 
+  // create a list of questions that are not answered
   const emptyAnswers = answersList.filter((answer) => !state.has(answer));
+  // populate the copied state (newStateWithEmptyAnswers) with empty answers
+  // and set them to 'null'
+  // so we can decide if there are any empty answers and if so, how many
   emptyAnswers.forEach((answer) => newStateWithEmptyAnswers.set(answer, null));
 
   return (

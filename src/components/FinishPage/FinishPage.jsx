@@ -7,23 +7,25 @@ import useAxios from '../../hooks/useAxios';
 function FinishPage() {
   const { state, dispatch } = useContext(AppContext);
 
+  // create an object from state (which is of type 'Map')
   const answersObject = Object.fromEntries(state);
 
-  // get the time from localStorage
+  // get the time from localStorage and add them to final object
   const minutes = window.localStorage.getItem('minutes');
   const seconds = window.localStorage.getItem('seconds');
   const hours = window.localStorage.getItem('hours');
-
   answersObject.minutes = minutes;
   answersObject.seconds = seconds;
   answersObject.hours = hours;
 
+  // useAxios to POST the results to server
   const { response, error, loading } = useAxios({
     method: 'POST',
     url: '/test_results',
     body: JSON.stringify(answersObject),
   });
 
+  // clear state
   function clearResults() {
     dispatch({
       type: 'RESTART',

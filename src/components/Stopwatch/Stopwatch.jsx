@@ -9,6 +9,7 @@ function Stopwatch() {
   const initialMinutes = window.localStorage.getItem('minutes') ? window.localStorage.getItem('minutes') : 0;
   const initialSeconds = window.localStorage.getItem('seconds') ? window.localStorage.getItem('seconds') : 0;
 
+  // saves time to localStorage
   function saveTime() {
     window.localStorage.setItem('hours', timer.getTimeValues().hours);
     window.localStorage.setItem('minutes', timer.getTimeValues().minutes);

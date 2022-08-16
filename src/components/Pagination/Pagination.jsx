@@ -5,6 +5,7 @@ import Select from '../Select/Select';
 function Pagination({
   handlePage, handleNext, handlePrev, page,
 }) {
+  // parent component >> 'Questions'
   return (
     <div className="w3-animate-left w3-center">
       <div

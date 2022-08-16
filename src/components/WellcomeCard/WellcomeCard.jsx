@@ -7,6 +7,7 @@ function WellcomeCard() {
   const check = useRef(null);
   const startButton = useRef(null);
 
+  // able the start button if input is checked
   function handleCheck() {
     if (check.current.checked) {
       startButton.current.disabled = false;

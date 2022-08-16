@@ -10,10 +10,11 @@ import Pagination from '../Pagination/Pagination';
 import './Questions.css';
 
 function Questions() {
-  const [load, setLoad] = useState(true);
+  const [load, setLoad] = useState(false);
   const [page, setPage] = useState(1);
   const { questions } = useContext(AppContext);
 
+  // stop loading animation
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
@@ -40,6 +41,7 @@ function Questions() {
     scrollToTop();
   }
 
+  // slices the questions array for pages
   const qArray = questions.filter(
     (item, index) => index < (page * 5) && index >= ((page - 1) * 5),
   );

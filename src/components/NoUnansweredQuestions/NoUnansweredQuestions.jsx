@@ -5,6 +5,8 @@ import AppContext from '../../contexts/AppContext';
 function UnansweredQuestions() {
   const { setTestFinished } = useContext(AppContext);
 
+  // testFinished (boolian) inside App conditionally
+  // shows the finished page
   function handleFinish() {
     setTestFinished(true);
   }

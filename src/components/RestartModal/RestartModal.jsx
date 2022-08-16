@@ -11,6 +11,7 @@ function RestartModal() {
     modal.current.style.display = 'none';
   }
 
+  // restarts the app and resets state
   function restart() {
     dispatch({
       type: 'RESTART',

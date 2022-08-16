@@ -10,8 +10,8 @@ function SingleQuestion({ ques }) {
   const [render, setRender] = useState(0);
   const { dispatch } = useContext(AppContext);
 
+  // send answer to the reducer
   function handleChange(event) {
-    // send answer to the reducer
     dispatch({
       type: 'ANSWER',
       name: event.target.name,
@@ -20,6 +20,9 @@ function SingleQuestion({ ques }) {
     setRender(render + 1);
   }
 
+  // decised which input is checked based on value from localStorage
+  // runs every time there is a new answer
+  // to rerender the component
   useEffect(() => {
     switch (window.localStorage.getItem(ques.code)) {
       case 'Very Accurate':
