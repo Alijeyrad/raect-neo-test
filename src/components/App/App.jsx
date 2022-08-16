@@ -15,7 +15,6 @@ import AppContext from '../../contexts/AppContext';
 import SubmitPage from '../SubmitPage/SubmitPage';
 import FinishPage from '../FinishPage/FinishPage';
 import questionReducer from '../../reducers/questions.reducer';
-// import PageNotFound from '../PageNotFound/PageNotFound';
 import q from '../../util/questions.json';
 import { answers, answersList } from '../../util/answers';
 import './App.css';
@@ -80,9 +79,6 @@ function App() {
                     component={FinishPage}
                   />
                 )}
-
-                {/* <Route path="/404" component={PageNotFound} />
-                <Redirect to="/404" /> */}
 
               </>
             )}
