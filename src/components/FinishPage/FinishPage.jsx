@@ -21,8 +21,8 @@ function FinishPage() {
   // useAxios to POST the results to server
   const { response, error, loading } = useAxios({
     method: 'POST',
-    url: '/test_results',
-    body: JSON.stringify(answersObject),
+    url: '/test_results/',
+    body: answersObject,
   });
 
   // clear state
@@ -65,7 +65,7 @@ function FinishPage() {
                     <div className="w3-display-container" style={{ height: '15vh' }}>
                       <p className="w3-display-middle w3-opacity"><FaRegCheckCircle style={{ fontSize: '64px' }} /></p>
                     </div>
-                    <p className="w3-center w3-xlarge">You Test Result Are Submitted.</p>
+                    <p className="w3-center w3-xlarge">Your Test Result Are Submitted.</p>
                     <p className="w3-center w3-large">
                       You can see them in your
                       {' '}
