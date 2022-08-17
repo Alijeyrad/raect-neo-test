@@ -22,7 +22,7 @@ function FinishPage() {
   const { response, error, loading } = useAxios({
     method: 'POST',
     url: '/test_results/',
-    body: answersObject,
+    data: answersObject,
   });
 
   // clear state
