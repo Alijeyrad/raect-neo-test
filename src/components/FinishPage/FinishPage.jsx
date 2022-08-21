@@ -3,26 +3,51 @@ import { Link } from 'react-router-dom';
 import { FaSpinner, FaRegSadTear, FaRegCheckCircle } from 'react-icons/fa';
 import AppContext from '../../contexts/AppContext';
 import useAxios from '../../hooks/useAxios';
+import questions from '../../util/questions.json';
 
 function FinishPage() {
   const { state, dispatch } = useContext(AppContext);
 
-  // create an object from state (which is of type 'Map')
-  const answersObject = Object.fromEntries(state);
+  // create a new map to fill with answers and related info
+  const codedAnswers = new Map();
+
+  // function to get information about questions from questions object
+  function getInfoFromQuestions(key) {
+    const info = {};
+    questions.questions.forEach((question) => {
+      if (question.code === key) {
+        info.code = question.code;
+        info.key = question.key;
+        info.scale = question.scale;
+      }
+    });
+    return info;
+  }
+
+  // construct answer scores
+  state.forEach((value, key) => {
+    const infoAboutQuestion = getInfoFromQuestions(key);
+    infoAboutQuestion.answer = value;
+    codedAnswers.set(key, infoAboutQuestion);
+  });
 
   // get the time from localStorage and add them to final object
   const minutes = window.localStorage.getItem('minutes');
   const seconds = window.localStorage.getItem('seconds');
   const hours = window.localStorage.getItem('hours');
-  answersObject.minutes = minutes;
-  answersObject.seconds = seconds;
-  answersObject.hours = hours;
+
+  codedAnswers.set('minutes', minutes);
+  codedAnswers.set('seconds', seconds);
+  codedAnswers.set('hours', hours);
+
+  // convert to object
+  const codedAnswersObject = Object.fromEntries(codedAnswers);
 
   // useAxios to POST the results to server
   const { response, error, loading } = useAxios({
     method: 'POST',
     url: '/test_results/',
-    data: answersObject,
+    data: codedAnswersObject,
   });
 
   // clear state
